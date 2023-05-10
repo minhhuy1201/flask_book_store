@@ -3,8 +3,15 @@ from .models import *
 # Register your models here.
 admin.site.register(Customer)
 admin.site.register(Address)
-admin.site.register(Author)
-admin.site.register(Book)
+class AuthorAdmin(admin.ModelAdmin):
+    list_display = ('id', 'name')
+    search_fields = ['name']
+admin.site.register(Author, AuthorAdmin)
+class BookAdmin(admin.ModelAdmin):
+    list_display = ('name', 'price', 'author', 'publisher', 'storage', 'book_image')
+    search_fields = ['name']
+    list_filter = ['author']
+admin.site.register(Book, BookAdmin)
 admin.site.register(Publisher)
 admin.site.register(Order)
 admin.site.register(OrderDetails)
