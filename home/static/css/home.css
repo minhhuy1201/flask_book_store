@@ -138,25 +138,22 @@ section {
 .header .header-1 .icons a:hover {
   color: var(--green);
 }
-.header .header-2 {
+.header .header-2{
   background: var(--green);
+}
+.header .header-2 .navbar ul{
   list-style-type: none;
-
-}
-.header .header-2 .navbar {
   text-align: center;
-  text-decoration: none;
-}
-.header .header-2 .navbar ul li {
-  display: inline-table;
-}
-.header .header-2 .navbar ul li > .sub-menu {
-  display: none;
-}
-.header .header-2 .navbar i{
-  position: relative;
   background-color: var(--green);
+  
+}
+.header .header-2 .navbar ul li { 
   color:#fff;
+  display: inline-table;
+  position: relative;
+}
+
+.header .header-2 .navbar i {
   padding: 1.2rem;
   font-size: 1.7rem;
 }
@@ -164,13 +161,21 @@ section {
   background-color: var(--dark-color);
 }
 .header .header-2 .navbar ul li a {
-  color: #fff;
+  color:#fff;
   display: block;
+  text-decoration: none;
   padding: 1.2rem;
   font-size: 1.7rem;
 }
 .header .header-2 .navbar ul li a:hover {
   background: var(--dark-color);
+}
+.header .header-2 .navbar ul li > .sub-menu {
+  display: none;
+  position: absolute;
+}
+.header .header-2 .navbar ul li:hover .sub-menu {
+  display: block;
 }
 .header .header-2.active {
   position: fixed;
