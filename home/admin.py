@@ -8,11 +8,14 @@ class AuthorAdmin(admin.ModelAdmin):
     search_fields = ['name']
 admin.site.register(Author, AuthorAdmin)
 class BookAdmin(admin.ModelAdmin):
-    list_display = ('name', 'price', 'author', 'publisher', 'storage', 'book_image')
+    list_display = ('id', 'name', 'price', 'author', 'publisher', 'storage', 'book_image')
     search_fields = ['name']
     list_filter = ['author']
 admin.site.register(Book, BookAdmin)
-admin.site.register(Publisher)
+class PublisherAdmin(admin.ModelAdmin):
+    list_display = ('id', 'name')
+    search_fields = ['name']
+admin.site.register(Publisher, PublisherAdmin)
 admin.site.register(Order)
 admin.site.register(OrderDetails)
 admin.site.register(Category)
