@@ -140,35 +140,36 @@ section {
 }
 .header .header-2 {
   background: var(--green);
+  list-style-type: none;
+
 }
-.header .header-2 .navbar button{
+.header .header-2 .navbar {
+  text-align: center;
+  text-decoration: none;
+}
+.header .header-2 .navbar ul li {
+  display: inline-table;
+}
+.header .header-2 .navbar ul li > .sub-menu {
+  display: none;
+}
+.header .header-2 .navbar i{
+  position: relative;
   background-color: var(--green);
   color:#fff;
   padding: 1.2rem;
   font-size: 1.7rem;
 }
-.header .header-2 .navbar button:hover{
+.header .header-2 .navbar i:hover{
   background-color: var(--dark-color);
-  
 }
-.header .header-2 .navbar {
-  text-align: center;
-}
-.header .header-2 .navbar a {
+.header .header-2 .navbar ul li a {
   color: #fff;
-  display: inline-block;
+  display: block;
   padding: 1.2rem;
   font-size: 1.7rem;
 }
-
-.header .header-2 .navbar button {
-  margin-left: -10rem
-}
-.header .header-2 .navbar .menu-bar {
-  width: 15rem;
-}
-
-.header .header-2 .navbar a:hover {
+.header .header-2 .navbar ul li a:hover {
   background: var(--dark-color);
 }
 .header .header-2.active {
