@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block book_row %}
+<div class="row">
+  {% for book in books %}
+  <div class="column">
+    <div class="card">
+      <div class="book-thumb">
+        <img src="/home/media/{{book.book_image}}" alt="">
+      </div>
+      <div class="book-details">
+        <span class="book-category">{{book.category}}</span>
+        <h4><a href="">{{book.name}}</h4>
+          <div class="book-bottom-details">
+            <div class="book-price">{{book.price}} VNĐ</div>
+            <div class="book-links">
+              <a href=""><i class="fa fa-heart"></i></a>
+              <a href=""><i class="fa fa-shopping-cart"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+{% endblock book_row %}
