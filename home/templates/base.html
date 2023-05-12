@@ -119,9 +119,32 @@
 
         <input type="submit" value="ĐĂNG NHẬP" class="btn" />
         <p><a href="#">Quên mật khẩu ?</a></p>
-        <p><a href="#">Đăng ký</a></p>
+        <p><a id="toRegister">Đăng ký</a></p>
       </form>
     </div>
+    
+    <!----------- REGISTER FORM ------------->
+    <div class="register-form-container">
+
+        <div id="close-register-btn" class="fas fa-times"></div>
+
+        <form action="">
+            <h3>Đăng ký</h3>
+
+            <span>Email đăng ký</span>
+            <input type="email" class="box" name="" placeholder="Nhập email" id="">
+
+            <span>Mật khẩu</span>
+            <input type="password" class="box" name="" placeholder="Nhập mật khẩu" id="">
+
+            <span>Nhập lại mật khẩu</span>
+            <input type="password" class="box" name="" placeholder="Nhập lại mật khẩu" id="">
+
+            <input type="submit" value="ĐĂNG KÝ" class="btn">
+            <p>Bạn đã có tài khoản ?<a id="toLogin">Đăng nhập</a></p>
+        </form>
+    </div>
+    
     <!--home-body-->
     {%block home_body%} {% endblock home_body%} 
     {% block book_row %}{% endblock book_row %}
