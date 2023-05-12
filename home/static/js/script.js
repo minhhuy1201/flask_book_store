@@ -4,14 +4,28 @@ const $$ = document.querySelectorAll.bind(document)
 // Variables
 const header2 = $('.header .header-2')
 const loginForm = $('.login-form-container')
-
+const registerForm = $('.register-form-container')
 
 $('#search-btn').onclick = () => {
     $('.search-form').classList.toggle('active')
 }
 
+$('#toRegister').onclick = () => {
+    loginForm.classList.remove('active')
+    registerForm.classList.toggle('active')
+}
+
+$('#toLogin').onclick = () => {
+    registerForm.classList.remove('active')
+    loginForm.classList.toggle('active')
+}
+
 $('#login-btn').onclick = () => {
     loginForm.classList.toggle('active')
+}
+
+$('#close-register-btn').onclick = () => {
+    registerForm.classList.remove('active')
 }
 
 $('#close-login-btn').onclick = () => {
