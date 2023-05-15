@@ -1,0 +1,446 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap");
+/* ---------- VARIABLES --------- */
+:root {
+  --green: #27ae60;
+  --dark-color: #219150;
+  --black: #444;
+  --light-color: #666;
+  --border: .1rem solid rgba(0, 0, 0, .1);
+  --border-hover: .1rem solid var(--black);
+  --box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+}
+
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: all 0.2s linear;
+  transition: width none;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-padding-top: 5rem;
+  scroll-behavior: smooth;
+}
+html::-webkit-scrollbar {
+  width: 1rem;
+}
+html::-webkit-scrollbar-track {
+  background: transparent;
+}
+html::-webkit-scrollbar-thumb {
+  background: var(--black);
+}
+
+/* ---------------------------- HEADER ---------------------------- */
+.header .header-1 {
+  background: #fff;
+  padding: 1.5rem 9%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header .header-1 .logo {
+  font-size: 2.5rem;
+  font-weight: bolder;
+  clear: var(--black);
+}
+.header .header-1 .logo i {
+  color: var(--green);
+}
+.header .header-1 .search-form {
+  width: 50rem;
+  height: 5rem;
+  border: var(--border);
+  overflow: hidden;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  border-radius: 0.5rem;
+}
+.header .header-1 .search-form input {
+  font-size: 1.6rem;
+  padding: 0 1.2rem;
+  height: 100%;
+  width: 100%;
+  text-transform: none;
+  color: var(--black);
+}
+.header .header-1 .search-form label {
+  font-size: 2.5rem;
+  padding-right: 1.5rem;
+  color: var(--black);
+}
+.header .header-1 .search-form label:hover {
+  color: var(--green);
+}
+.header .header-1 .icons div,
+.header .header-1 .icons a {
+  font-size: 2.5rem;
+  margin-left: 1.5rem;
+  color: var(--black);
+  cursor: pointer;
+}
+.header .header-1 .icons div:hover,
+.header .header-1 .icons a:hover {
+  color: var(--green);
+}
+.header .header-2 {
+  background: var(--green);
+}
+.header .header-2 .navbar {
+  text-align: center;
+}
+.header .header-2 .navbar a {
+  color: #fff;
+  display: inline-block;
+  padding: 1.2rem;
+  font-size: 1.7rem;
+}
+.header .header-2 .navbar a:hover {
+  background: var(--dark-color);
+}
+.header .header-2.active {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+/* ---------------------------- SHOP CART CONTAINER ---------------------------- */
+body {
+  background: #eee;
+  margin: 0;
+  padding: 0;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.red {
+  background: #cb5a5e;
+}
+
+.yellow {
+  background: #f1c40f;
+}
+
+.blue {
+  background: #3598dc;
+}
+
+.minused {
+  margin: 0 50px 0 0 !important;
+}
+
+.added {
+  margin: 0 -50px 0 0 !important;
+}
+
+.clearfix {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#shop-cart-header {
+  background: #fff;
+  margin: 0 0 30px 0;
+}
+#shop-cart-header h1 {
+  text-align: center;
+  font-size: 3.5rem;
+  font-weight: 300;
+  padding: 40px 0;
+  position: relative;
+  margin: 0;
+}
+
+.container {
+  margin: 0 auto;
+  width: 980px;
+}
+
+#cart {
+  width: 100%;
+}
+#cart h1 {
+  font-size: 2.4rem;
+  font-weight: 300;
+}
+#cart a {
+  color: var(--green);
+  text-decoration: none;
+  transition: color 0.2s linear;
+}
+#cart a:hover {
+  color: #000;
+}
+
+.no-product {
+  text-align: center;
+  font-size: 2.5rem;
+}
+
+.product {
+  border: 1px solid #eee;
+  margin: 20px 0;
+  width: 100%;
+  height: 195px;
+  position: relative;
+  transition: margin 0.2s linear, opacity 0.2s linear;
+}
+.product.removed {
+  margin-left: 980px !important;
+  display: none;
+}
+.product img {
+  width: 100%;
+  height: 100%;
+}
+.product header,
+.product .content {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-style: none none solid none;
+  float: left;
+}
+.product header {
+  background: #000;
+  margin: 0 1% 20px 0;
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+  width: 24%;
+  height: 195px;
+}
+.product header:hover img {
+  opacity: 0.7;
+}
+.product header:hover h3 {
+  bottom: 73px;
+}
+.product header h3 {
+  background: var(--green);
+  color: #fff;
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 300;
+  line-height: 49px;
+  margin: 0;
+  padding: 0 30px;
+  position: absolute;
+  bottom: -50px;
+  right: 0;
+  left: 0;
+  transition: bottom 0.2s linear;
+}
+.product .content {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  height: 140px;
+  padding: 0 20px;
+  width: 75%;
+}
+.product .content p {
+  font-size: 1.5rem;
+}
+.product h1 {
+  color: var(--green);
+  font-size: 25px;
+  font-weight: 300;
+  margin: 17px 0 20px 0;
+}
+.product footer.content {
+  height: 50px;
+  margin: 6px 0 0 0;
+  padding: 0;
+}
+.product footer .price {
+  background: #fcfcfc;
+  color: #000;
+  float: right;
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 49px;
+  margin: 0;
+  padding: 0 30px;
+}
+.product footer .full-price {
+  background: var(--green);
+  color: #fff;
+  float: right;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 49px;
+  margin: 0;
+  padding: 0 30px;
+  transition: margin 0.15s linear;
+}
+
+.remove {
+  cursor: pointer;
+}
+
+.qt,
+.qt-plus,
+.qt-minus {
+  display: block;
+  float: left;
+}
+
+.qt {
+  font-size: 19px;
+  line-height: 50px;
+  width: 70px;
+  text-align: center;
+}
+
+.qt-plus,
+.qt-minus {
+  background: #fcfcfc;
+  border: none;
+  font-size: 30px;
+  font-weight: 300;
+  height: 100%;
+  padding: 0 20px;
+  transition: background 0.2s linear;
+}
+.qt-plus:hover,
+.qt-minus:hover {
+  background: var(--green);
+  color: #fff;
+  cursor: pointer;
+}
+
+.qt-plus {
+  line-height: 50px;
+}
+
+.qt-minus {
+  line-height: 47px;
+}
+
+#shop-cart-footer {
+  background: #fff;
+  margin: 30px 0 0 0;
+  padding: 40px;
+}
+#shop-cart-footer h1 {
+  background: #fcfcfc;
+  border: 1px solid #ccc;
+  border-style: none none solid none;
+  font-size: 24px;
+  font-weight: 500;
+  margin: 0 0 7px 0;
+  padding: 14px 40px;
+  text-align: center;
+}
+#shop-cart-footer h2 {
+  font-size: 24px;
+  font-weight: 300;
+  margin: 10px 0 0 0;
+}
+#shop-cart-footer h3 {
+  font-size: 19px;
+  font-weight: 300;
+  margin: 15px 0;
+}
+
+.btn {
+  background: var(--green);
+  border: 1px solid #999;
+  border-style: none none solid none;
+  cursor: pointer;
+  display: block;
+  color: #fff;
+  font-size: 3rem;
+  font-weight: 500;
+  padding: 16px 0;
+  width: 290px;
+  text-align: center;
+  transition: all 0.2s linear;
+}
+.btn:hover {
+  color: #fff;
+  background-color: #429188;
+}
+
+.type {
+  background: #fcfcfc;
+  font-size: 13px;
+  padding: 10px 16px;
+  left: 100%;
+}
+
+.type,
+.color {
+  border: 1px solid #ccc;
+  border-style: none none solid none;
+  position: absolute;
+}
+
+.color {
+  width: 40px;
+  height: 40px;
+  right: -40px;
+}
+
+/* ---------------------------- FOOTER ---------------------------- */
+footer .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  gap: 1.5rem;
+}
+footer .box-container .box {
+  margin: auto;
+  padding: auto;
+}
+footer .box-container .box h3 {
+  font-size: 2.2rem;
+  color: var(--black);
+  padding: 1rem 0;
+}
+footer .box-container .box a {
+  display: block;
+  font-size: 1.4rem;
+  color: var(--light-color);
+  padding: 1rem 0;
+}
+footer .box-container .box a:hover i {
+  padding-right: 2rem;
+}
+footer .box-container .box a i {
+  color: var(--green);
+  padding-right: 0.5rem;
+}
+footer .share {
+  padding: 1rem 0;
+  text-align: center;
+}
+footer .share a {
+  height: 5rem;
+  width: 5rem;
+  line-height: 5rem;
+  font-size: 2rem;
+  color: #fff;
+  background-color: var(--green);
+  margin: 0 0.3rem;
+  border-radius: 50%;
+}
+footer .share a:hover {
+  background-color: var(--black);
+}/*# sourceMappingURL=sp_cart_style.css.map */
