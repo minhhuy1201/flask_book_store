@@ -1,21 +1,21 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block book_card %}
+{% block search %}
 <div class="row">
-  {% for book in books %}
+  {% for search in searchs %}
   <div class="column">
     <div class="card">
       <div class="book-thumb">
-        <img src="/home/static/media/{{book.4}}" alt="">
+        <img src="/home/static/media/{{search.3}}" alt="">
       </div>
       <div class="book-details">
-        <span class="book-category">{{book.3}} - {{book.5}}</span>
-        <h4><a href="">{{book.1}}</h4>
+        <span class="book-category">{{search.2}} - {{search.4}}</span>
+        <h4><a href="">{{search.0}}</h4>
           <div class="book-bottom-details">
-            <div class="book-price">{{book.2}} VND</div>
+            <div class="book-price">{{search.1}} VND</div>
             <div class="book-links">
               <a href=""><i class="fa fa-heart"></i></a>
-              <a data-book={{book.0}} data-action="add" class="add-btn update-cart"><i class="fa fa-shopping-cart"></i></a>
+              <a href=""><i class="fa fa-shopping-cart"></i></a>
             </div>
           </div>
         </div>
@@ -23,4 +23,4 @@
     </div>
     {% endfor %}
   </div>
-{% endblock book_card %}
+{% endblock search %}

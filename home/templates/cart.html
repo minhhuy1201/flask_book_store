@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block cart %}
+    <!------------ SHOPPING CART  ----------->
+    <div class="shop-cart">
+        <header id="shop-cart-header">
+            <div class="container">
+                <h1>Giỏ hàng của bạn</h1>
+            </div>
+        </header>
+        <div class="container">
+            <section id="cart">
+                {% for item in items %}
+                <article class="product">
+                    <header>
+                        <a class="remove">
+                            <img src="/home/static/media/{{item.5}}" alt="">
+                            <h3>Xóa</h3>
+                        </a>
+                    </header>
+
+                    <div class="content">
+                        <h1>{{item.0}}</h1>
+                        <p>{{item.4}}</p>
+                    </div>
+
+                    <footer class="content">
+                        <span class="qt-minus">-</span>
+                        <span class="qt">{{item.1}}</span>
+                        <span class="qt-plus">+</span>
+
+                        <h2 class="full-price">
+                            {{item.3}}VND
+                        </h2>
+
+                        <h2 class="price">
+                            {{item.2}}VND
+                        </h2>
+                    </footer>
+                </article>
+               {% endfor %}
+            </section>
+        </div>
+
+        <footer id="shop-cart-footer">
+            <div class="container clearfix">
+
+                <div class="left">
+                    <h2 >Thành tiền: <span class="subtotal">{{order.total}}</span> VND</h2>
+                    <h3 >Phí ship: <span class="shipping">30000</span> VND</h3>
+                </div>
+
+                <div class="right">
+                    <h1 class="total">Tổng tiền: <span>{{order.total}}</span> VND</h1>
+                    <a class="btn">THANH TOÁN</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+{% endblock cart %}
