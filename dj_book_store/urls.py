@@ -23,5 +23,8 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home.get_home),
-    path('book/', home.get_book)
+    path('book/', home.get_book),
+    path('novel/', home.get_novel),
+    path('cart/', home.get_cart),
+    path('search/', home.get_search, name='search'),
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
