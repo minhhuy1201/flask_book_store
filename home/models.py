@@ -8,16 +8,19 @@ class Address(models.Model):
     ward = models.CharField(max_length=30, null=True)
     address_line = models.CharField(max_length=100, null=True) 
     
+    def __str__(self):
+        return str(self.id)
+    
 class Customer(models.Model):
     user = models.OneToOneField(User, on_delete=models.SET_NULL, null=True)
     name = models.CharField(max_length=50, null=True, blank=False)
     email = models.EmailField(max_length=254, null=True)
     phone = models.CharField(max_length=30, null=True)
-    gender = models.CharField(max_length=3, null=True)
+    gender = models.CharField(max_length=5, null=True)
     age = models.IntegerField()
     address = models.ForeignKey(Address, on_delete=models.SET_NULL, null=True)
     created_on = models.DateTimeField(auto_now_add=True, null=True)
-    modified_on = models.DateTimeField(null=True)
+    modified_on = models.DateTimeField(null=True, blank=True)
     
     def __str__(self):
         return self.name
@@ -40,10 +43,10 @@ class Publisher(models.Model):
     
     def __str__(self):
         return self.name
-       
+        
 class Book(models.Model):
     name = models.CharField(max_length= 150)
-    price = models.DecimalField(max_digits=20, decimal_places=3, null=True)
+    price = models.DecimalField(max_digits=20, decimal_places=0, null=True)
     author = models.ForeignKey(Author, on_delete=models.SET_NULL, null=True, blank=True)
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True, blank=True)
     publisher = models.ForeignKey(Publisher, on_delete=models.SET_NULL, null=True, blank=True)
@@ -55,17 +58,17 @@ class Book(models.Model):
         return self.name
 
 class Order(models.Model):
-    customer = models.ForeignKey(Customer, on_delete=models.SET_NULL, null=True)
+    customer = models.ForeignKey(Customer, on_delete=models.CASCADE, null=True)
     order_date = models.DateTimeField(auto_now_add=True)
-    total = models.DecimalField(max_digits=5, decimal_places=2, null=True)
+    total = models.DecimalField(max_digits=20, decimal_places=0, null=True, default=0)
     
     def __str__(self):
-        return self.name
+        return str(f"{self.customer.name}")
     
-class OrderDetails(models.Model):
-    order = models.ForeignKey(Order, on_delete=models.SET_NULL, null=True)
-    book = models.ForeignKey(Book, on_delete=models.SET_NULL, null=True)
+class OrderDetail(models.Model):
+    order = models.ForeignKey(Order, on_delete=models.CASCADE, null=True)
+    book = models.ForeignKey(Book, on_delete=models.CASCADE, null=True)
     quantity = models.IntegerField(null=True)
     
     def __str__(self):
-        return self.name    
+        return str(self.order.id)
