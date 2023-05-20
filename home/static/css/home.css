@@ -138,6 +138,7 @@ section {
 .header .header-1 .icons a:hover {
   color: var(--green);
 }
+/* ---------- NAVBAR --------- */
 .header .header-2{
   background: var(--green);
 }
@@ -761,4 +762,4 @@ footer .share a:hover {
   html {
     font-size: 50%;
   }
-}/*# sourceMappingURL=style.css.map */
+}

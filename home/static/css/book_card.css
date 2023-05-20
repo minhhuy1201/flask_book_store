@@ -1,6 +1,5 @@
 .card {
   width: 300px;
-  position: relative;
   box-shadow: 0 2px 7px #dfdfdf;
   margin: 50px auto;
   background: #fafafa;
@@ -105,6 +104,10 @@
 }
 
 .book-links a:hover {
+  color: #27ae60;
+}
+
+.book-links button:hover {
   color: #27ae60;
 }
 @media screen and (max-width: 600px) {
